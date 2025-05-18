@@ -23,6 +23,6 @@ class Splash_screen : AppCompatActivity() {
         Handler(Looper.getMainLooper()).postDelayed({
             startActivity(Intent(this, Signup_screen::class.java))
 
-        } , 300)
+        } , 3000)
     }
 }
