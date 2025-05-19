@@ -22,5 +22,20 @@ class MainActivity : AppCompatActivity() {
             finish()
         }
 
+        binding.btnLogin.setOnClickListener {
+            val username = binding.tfUsername.text.toString()
+            val password = binding.tfUserPassword.text.toString()
+
+            when {
+                username.isEmpty() -> {
+                    binding.tfUsername.error = "username cannot empty"
+                }
+                password.isEmpty() -> {
+                    binding.tfUserPassword.error = "please enter password"
+                }
+
+            }
+        }
+
     }
 }

@@ -12,10 +12,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Login_and_signup_shared_preference_kotlin">
         <activity
+            android:name=".home_screen"
+            android:exported="false" />
+        <activity
             android:name=".Splash_screen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -24,8 +28,7 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="false">
-        </activity>
+            android:exported="false"></activity>
     </application>
 
 </manifest>

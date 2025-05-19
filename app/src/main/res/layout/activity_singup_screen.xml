@@ -74,8 +74,7 @@
         app:boxCornerRadiusTopEnd="8dp"
         app:boxCornerRadiusBottomStart="8dp"
         app:boxCornerRadiusBottomEnd="8dp"
-        app:passwordToggleEnabled="true"
-        app:passwordToggleTint="#FB4D17">
+   >
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etPassword"
@@ -98,7 +97,9 @@
         app:boxCornerRadiusBottomStart="8dp"
         app:boxCornerRadiusBottomEnd="8dp"
         app:passwordToggleEnabled="true"
-        app:passwordToggleTint="#FB4D17">
+        app:passwordToggleTint="#FB4D17"
+
+        >
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etConfirmPassword"
