@@ -39,7 +39,6 @@ class home_screen : AppCompatActivity() {
                 val sharedPref = getSharedPreferences("UserData", MODE_PRIVATE)
                 val editor = sharedPref.edit()
                 editor.putBoolean("isLoggedIn", false)
-                editor.clear() // Remove all data (like username & password)
                 editor.apply()
 
                 // Create intent to navigate back to the login screen
