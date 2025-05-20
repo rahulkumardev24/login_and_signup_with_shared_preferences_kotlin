@@ -22,9 +22,6 @@ class MainActivity : AppCompatActivity() {
         val savedUsername = sharedPref.getString("username" , "")
         val savedPassword = sharedPref.getString("password" , "")
 
-        ///
-        val username = binding.tfUsername.text.toString().trim()
-        val password = binding.tfUserPassword.text.toString().trim()
 
         // redirect
         binding.txtSignupBtn.setOnClickListener {
@@ -33,8 +30,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.btnLogin.setOnClickListener {
-            val username = binding.tfUsername.text.toString()
-            val password = binding.tfUserPassword.text.toString()
+            val username = binding.tfUsername.text.toString().trim()
+            val password = binding.tfUserPassword.text.toString().trim()
 
             when {
                 username.isEmpty() -> {
@@ -44,6 +41,8 @@ class MainActivity : AppCompatActivity() {
                     binding.tfUserPassword.error = "please enter password"
                 }
                 username == savedUsername && password == savedPassword -> {
+                    sharedPref.edit().putBoolean("isLoggedIn", true).apply()
+
                     Toast.makeText(this , "Login Successfully" , Toast.LENGTH_LONG).show()
 
                     val intent = Intent(this,home_screen::class.java)

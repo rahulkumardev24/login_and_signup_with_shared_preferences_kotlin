@@ -50,6 +50,7 @@ class Signup_screen : AppCompatActivity() {
                     val editor = sharedPref.edit()
                     editor.putString("username", username)
                     editor.putString("password", password)
+                    editor.putBoolean("isLoggedIn", false)
                     editor.apply()
 
                     Toast.makeText(this, "Signup Successful", Toast.LENGTH_SHORT).show()

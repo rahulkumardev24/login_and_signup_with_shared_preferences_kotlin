@@ -36,8 +36,9 @@ class home_screen : AppCompatActivity() {
             // Handle logout button click
             R.id.item_logout -> {
                 // Clear stored user data from SharedPreferences
-                val sharedPref = getSharedPreferences("UserPrefs", MODE_PRIVATE)
+                val sharedPref = getSharedPreferences("UserData", MODE_PRIVATE)
                 val editor = sharedPref.edit()
+                editor.putBoolean("isLoggedIn", false)
                 editor.clear() // Remove all data (like username & password)
                 editor.apply()
 

@@ -5,24 +5,31 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.login_and_signup_shared_preference_kotlin.databinding.ActivitySplashScreenBinding
 
 class Splash_screen : AppCompatActivity() {
     lateinit var binding: ActivitySplashScreenBinding
+
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySplashScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-//      Show splash screen -> Navigate to sign up screen
-        Handler(Looper.getMainLooper()).postDelayed({
-            startActivity(Intent(this, Signup_screen::class.java))
+        // Check login session
+        val sharedPref = getSharedPreferences("UserData", MODE_PRIVATE)
+        val isLoggedIn = sharedPref.getBoolean("isLoggedIn", false)
 
-        } , 3000)
+        Handler(Looper.getMainLooper()).postDelayed({
+            if (isLoggedIn) {
+                // If already logged in, go to Home
+                startActivity(Intent(this, home_screen::class.java))
+            } else {
+                // Otherwise, go to Signup or Login
+                startActivity(Intent(this, Signup_screen::class.java))
+            }
+            finish()
+        }, 3000)
     }
 }
