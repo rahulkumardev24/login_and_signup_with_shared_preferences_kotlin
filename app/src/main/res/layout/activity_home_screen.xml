@@ -6,7 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    android:padding="16dp"
     tools:context=".home_screen">
 
     <!-- App Bar -->
@@ -21,6 +20,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:title="Home"
+        app:menu="@menu/app_bar_menu"
         app:titleTextColor="@color/white" />
 
     <!-- Welcome Message -->
@@ -72,7 +72,7 @@
                     android:id="@+id/tvUserName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="John Doe"
+                    android:text="Rahul kumar"
                     android:textSize="18sp"
                     android:textStyle="bold"/>
 
@@ -80,7 +80,7 @@
                     android:id="@+id/tvUserEmail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="john@example.com"
+                    android:text="rahulsahudev24@gmail.com"
                     android:textSize="14sp"
                     android:layout_marginTop="4dp"/>
             </LinearLayout>
